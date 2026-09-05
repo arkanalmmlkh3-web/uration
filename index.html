@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07151d">
+  <meta name="description" content="خدمات النظافة والعزل ونقل الأثاث ومكافحة الحشرات — خدمة سريعة واحترافية تصل إليك.">
+  <title>نقاء | خدمات النظافة والعزل والنقل</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
+
+    :root {
+      --ink: #07151d;
+      --ink-soft: #163440;
+      --paper: #f7fbf9;
+      --muted: #6e8589;
+      --mint: #65e0ba;
+      --mint-deep: #12ad82;
+      --yellow: #ffc857;
+      --coral: #ff806b;
+      --line: rgba(7, 21, 29, .1);
+      --shadow: 0 24px 70px rgba(4, 38, 44, .16);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 7% 14%, rgba(101, 224, 186, .18), transparent 23rem),
+        radial-gradient(circle at 93% 70%, rgba(255, 200, 87, .16), transparent 25rem),
+        #eff7f4;
+      font-family: "Cairo", "IBM Plex Sans Arabic", Tahoma, sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .page-shell { width: min(1180px, calc(100% - 28px)); margin: 0 auto; }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247, 251, 249, .88);
+      border-bottom: 1px solid rgba(7, 21, 29, .07);
+      backdrop-filter: blur(18px);
+    }
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: -.4px; }
+    .brand-mark {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px 14px 14px 4px;
+      color: var(--ink);
+      background: var(--mint);
+      box-shadow: 7px 7px 0 rgba(7, 21, 29, .09);
+      transform: rotate(-4deg);
+      font-size: 21px;
+    }
+    .brand-text { line-height: 1.15; }
+    .brand-text small { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; font-weight: 600; letter-spacing: .2px; }
+    .nav-menu { display: flex; align-items: center; gap: 28px; color: var(--muted); font-size: 13px; font-weight: 700; }
+    .nav-menu a { transition: color .2s ease; }
+    .nav-menu a:hover { color: var(--mint-deep); }
+    .nav-cta { padding: 10px 17px; border-radius: 99px; color: var(--ink); background: var(--yellow); box-shadow: 0 8px 18px rgba(255, 200, 87, .22); }
+    .menu-toggle { display: none; width: 44px; height: 44px; border: 0; border-radius: 13px; color: var(--ink); background: #e6f2ee; cursor: pointer; }
+    .menu-toggle span { display: block; width: 20px; height: 2px; margin: 4px auto; border-radius: 3px; background: currentColor; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr);
+      align-items: center;
+      gap: clamp(35px, 6vw, 95px);
+      min-height: 590px;
+      padding: 72px 0 55px;
+    }
+    .hero-copy { position: relative; z-index: 1; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; color: var(--mint-deep); font-size: 13px; font-weight: 800; }
+    .eyebrow::before { content: ""; width: 30px; height: 2px; border-radius: 3px; background: var(--mint-deep); }
+    h1 { max-width: 660px; margin: 0; font-size: clamp(35px, 5.2vw, 65px); line-height: 1.16; letter-spacing: -2px; font-weight: 900; }
+    h1 strong { color: var(--mint-deep); }
+    .hero-lead { max-width: 530px; margin: 22px 0 27px; color: var(--muted); font-size: clamp(15px, 1.8vw, 18px); line-height: 2; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 49px;
+      padding: 11px 20px;
+      border: 0;
+      border-radius: 14px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn:hover { transform: translateY(-3px); }
+    .btn-primary { color: var(--ink); background: var(--mint); box-shadow: 0 12px 24px rgba(18, 173, 130, .22); }
+    .btn-primary:hover { background: #7be8c6; box-shadow: 0 17px 28px rgba(18, 173, 130, .3); }
+    .btn-dark { color: #fff; background: var(--ink); box-shadow: 0 12px 24px rgba(7, 21, 29, .16); }
+    .btn-light { color: var(--ink); background: #fff; border: 1px solid var(--line); }
+    .mini-note { display: flex; align-items: center; gap: 9px; margin-top: 25px; color: var(--muted); font-size: 12px; font-weight: 600; }
+    .mini-note .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--mint-deep); box-shadow: 0 0 0 5px rgba(18, 173, 130, .13); }
+
+    /* Flyer card */
+    .flyer-wrap { position: relative; display: flex; justify-content: center; }
+    .flyer {
+      position: relative;
+      width: min(100%, 430px);
+      min-height: 455px;
+      overflow: hidden;
+      padding: 32px;
+      border-radius: var(--radius-xl);
+      color: #fff;
+      background: linear-gradient(145deg, #0c2833 0%, #07151d 68%);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+    .flyer::before, .flyer::after { content: ""; position: absolute; z-index: -1; border-radius: 50%; }
+    .flyer::before { width: 270px; height: 270px; top: -105px; left: -88px; background: var(--mint); opacity: .95; }
+    .flyer::after { width: 220px; height: 220px; right: -108px; bottom: -105px; border: 26px solid var(--yellow); opacity: .95; }
+    .flyer-top { display: flex; align-items: center; justify-content: space-between; color: rgba(255,255,255,.65); font-size: 11px; font-weight: 700; }
+    .flyer-stamp { padding: 6px 11px; color: var(--ink); border-radius: 99px; background: var(--yellow); }
+    .flyer-content { padding: 56px 0 20px; }
+    .flyer-content .tiny { color: var(--mint); font-size: 12px; font-weight: 800; }
+    .flyer-content h2 { margin: 11px 0 14px; font-size: 39px; line-height: 1.25; letter-spacing: -1.5px; }
+    .flyer-content p { max-width: 265px; margin: 0; color: rgba(255,255,255,.72); font-size: 14px; }
+    .flyer-contact { position: absolute; right: 32px; bottom: 31px; left: 32px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 19px; border-top: 1px solid rgba(255,255,255,.16); }
+    .flyer-number { direction: ltr; color: var(--mint); font-size: 19px; font-weight: 800; letter-spacing: .4px; }
+    .flyer-phone { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; color: var(--ink); background: #fff; font-size: 20px; }
+    .spark { position: absolute; color: var(--yellow); font-size: 26px; animation: float 3s ease-in-out infinite; }
+    .spark.one { top: 31%; right: -24px; }
+    .spark.two { left: -23px; bottom: 17%; color: var(--mint); animation-delay: 1.1s; }
+    @keyframes float { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-9px) rotate(10deg); } }
+
+    /* Sections */
+    .section { padding: 70px 0; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 25px; margin-bottom: 28px; }
+    .section-kicker { margin: 0 0 7px; color: var(--mint-deep); font-size: 12px; font-weight: 900; letter-spacing: .5px; }
+    h2.section-title { margin: 0; font-size: clamp(27px, 4vw, 39px); line-height: 1.3; letter-spacing: -1px; }
+    .section-heading > p { max-width: 360px; margin: 0; color: var(--muted); font-size: 13px; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 300px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 10px 30px rgba(10, 60, 62, .04);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .service-card:hover { transform: translateY(-7px); box-shadow: 0 20px 40px rgba(10, 60, 62, .12); }
+    .service-icon { display: grid; place-items: center; width: 52px; height: 52px; margin-bottom: 20px; border-radius: 17px; color: var(--ink); font-size: 24px; background: #d8f4e9; }
+    .service-card:nth-child(2) .service-icon { background: #fff0c8; }
+    .service-card:nth-child(3) .service-icon { background: #dcebf5; }
+    .service-card:nth-child(4) .service-icon { background: #ffe0da; }
+    .service-card h3 { margin: 0 0 7px; font-size: 18px; }
+    .service-card p { flex: 1; margin: 0 0 19px; color: var(--muted); font-size: 12px; line-height: 1.9; }
+    .card-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .card-actions .btn { min-height: 43px; padding: 8px 7px; border-radius: 11px; font-size: 11px; }
+    .btn-whatsapp { color: #fff; background: #18b984; }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px;
+      padding: 31px;
+      border-radius: var(--radius-xl);
+      color: #fff;
+      background: var(--ink);
+      overflow: hidden;
+      position: relative;
+    }
+    .features::before { content: ""; position: absolute; width: 260px; height: 260px; top: -140px; left: 45%; border: 2px solid rgba(101,224,186,.22); border-radius: 50%; box-shadow: 0 0 0 26px rgba(101,224,186,.05), 0 0 0 52px rgba(101,224,186,.04); }
+    .features-copy, .feature-list { position: relative; z-index: 1; }
+    .features-copy h2 { max-width: 410px; margin: 0 0 13px; font-size: clamp(26px, 4vw, 37px); line-height: 1.35; }
+    .features-copy p { max-width: 390px; margin: 0; color: rgba(255,255,255,.62); font-size: 13px; }
+    .feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: center; }
+    .feature { display: flex; align-items: flex-start; gap: 11px; padding: 15px 13px; border: 1px solid rgba(255,255,255,.1); border-radius: 15px; background: rgba(255,255,255,.045); }
+    .feature-icon { flex: 0 0 auto; display: grid; place-items: center; width: 29px; height: 29px; border-radius: 9px; color: var(--ink); background: var(--mint); font-size: 15px; font-weight: 900; }
+    .feature strong { display: block; margin-bottom: 2px; font-size: 12px; }
+    .feature span { display: block; color: rgba(255,255,255,.55); font-size: 10px; line-height: 1.6; }
+
+    .location-bar { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 18px; padding: 17px 21px; border-radius: 18px; background: #fff; box-shadow: 0 9px 25px rgba(10, 60, 62, .05); }
+    .location-label { display: flex; align-items: center; gap: 11px; font-size: 13px; font-weight: 800; }
+    .location-pin { display: grid; place-items: center; width: 37px; height: 37px; border-radius: 11px; color: var(--ink); background: #fff0c8; }
+    .location-bar small { color: var(--muted); font-size: 11px; }
+
+    .testimonial { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: rgba(255,255,255,.72); }
+    .quote-mark { display: grid; place-items: center; width: 49px; height: 49px; border-radius: 15px; color: var(--ink); background: var(--yellow); font-size: 24px; font-weight: 900; }
+    .testimonial p { margin: 0; font-size: 14px; font-weight: 700; }
+    .testimonial small { display: block; margin-top: 5px; color: var(--muted); font-size: 11px; }
+    .stars { color: #f3b31e; letter-spacing: 2px; font-size: 16px; white-space: nowrap; }
+
+    /* Footer */
+    footer { margin-top: 14px; padding: 28px 0 35px; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; color: var(--muted); font-size: 11px; }
+    .designer { color: var(--ink); font-weight: 800; }
+    .designer a { color: var(--mint-deep); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* Floating action buttons */
+    .floating-actions { position: fixed; z-index: 30; left: 17px; bottom: 22px; display: flex; flex-direction: column; gap: 11px; }
+    .float-btn { position: relative; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 17px; color: #fff; font-size: 23px; box-shadow: 0 12px 25px rgba(7, 21, 29, .2); animation: pulse 2.1s infinite; }
+    .float-btn span { position: absolute; right: calc(100% + 10px); padding: 6px 10px; border-radius: 7px; color: var(--ink); background: #fff; box-shadow: 0 6px 18px rgba(7,21,29,.12); font-family: inherit; font-size: 10px; font-weight: 800; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .2s ease; }
+    .float-btn:hover span { opacity: 1; }
+    .float-call { background: var(--ink); }
+    .float-wa { background: #13b77f; animation-delay: .25s; }
+    @keyframes pulse { 0%, 100% { box-shadow: 0 12px 25px rgba(7,21,29,.2), 0 0 0 0 rgba(18,173,130,.35); } 50% { box-shadow: 0 13px 30px rgba(7,21,29,.25), 0 0 0 11px rgba(18,173,130,0); } }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding-top: 54px; }
+      .hero-copy { text-align: center; }
+      .hero-lead { margin-right: auto; margin-left: auto; }
+      .hero-actions, .mini-note { justify-content: center; }
+      .flyer-wrap { margin-top: 5px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .features { grid-template-columns: 1fr; }
+      .features-copy p { max-width: 530px; }
+    }
+    @media (max-width: 650px) {
+      .page-shell { width: min(100% - 22px, 520px); }
+      .site-header .page-shell { width: calc(100% - 24px); }
+      .nav { min-height: 68px; }
+      .nav-menu { position: absolute; top: 68px; right: 11px; left: 11px; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 9px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.97); box-shadow: 0 17px 35px rgba(7,21,29,.13); }
+      .nav-menu.open { display: flex; }
+      .nav-menu a { padding: 11px 13px; border-radius: 9px; }
+      .nav-menu a:hover { background: #eff8f4; }
+      .nav-cta { text-align: center; }
+      .menu-toggle { display: block; }
+      .hero { min-height: 0; padding: 48px 0 35px; }
+      h1 { font-size: 38px; letter-spacing: -1.5px; }
+      .flyer { min-height: 400px; padding: 25px; border-radius: 27px; }
+      .flyer-content { padding-top: 51px; }
+      .flyer-content h2 { font-size: 34px; }
+      .flyer-contact { right: 25px; bottom: 25px; left: 25px; }
+      .section { padding: 48px 0; }
+      .section-heading { display: block; }
+      .section-heading > p { margin-top: 12px; }
+      .services-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .service-card { min-height: 294px; padding: 16px; border-radius: 18px; }
+      .service-icon { width: 45px; height: 45px; margin-bottom: 14px; border-radius: 14px; font-size: 21px; }
+      .service-card h3 { font-size: 15px; }
+      .service-card p { font-size: 11px; }
+      .card-actions { grid-template-columns: 1fr; gap: 6px; }
+      .card-actions .btn { min-height: 40px; }
+      .features { padding: 24px 18px; border-radius: 25px; }
+      .feature-list { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .feature { padding: 11px 8px; gap: 7px; }
+      .feature strong { font-size: 10px; }
+      .feature span { font-size: 9px; }
+      .feature-icon { width: 24px; height: 24px; font-size: 12px; }
+      .location-bar { align-items: flex-start; flex-direction: column; }
+      .testimonial { grid-template-columns: auto 1fr; }
+      .stars { grid-column: 1 / -1; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .floating-actions { left: 12px; bottom: 14px; gap: 8px; }
+      .float-btn { width: 51px; height: 51px; border-radius: 15px; font-size: 21px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="page-shell">
+      <nav class="nav" aria-label="القائمة الرئيسية">
+        <a class="brand" href="#home" aria-label="نقاء - الصفحة الرئيسية">
+          <span class="brand-mark">✦</span>
+          <span class="brand-text">نقاء <small>خدمة تستحق الثقة</small></span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-menu" id="navMenu">
+          <a href="#home">الرئيسية</a>
+          <a href="#about">من نحن</a>
+          <a href="#services">خدماتنا</a>
+          <a href="#reviews">تقييمات العملاء</a>
+          <a class="nav-cta" href="tel:0575651053">اتصل الآن</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="page-shell hero">
+      <div class="hero-copy">
+        <div class="eyebrow">حلول منزلية متكاملة</div>
+        <h1>بيتك يستاهل <strong>نظافة</strong> تليق به.</h1>
+        <p class="hero-lead">نقدم لك خدمات النظافة والعزل ونقل الأثاث ومكافحة الحشرات باهتمام حقيقي، وفريق جاهز يوصل لباب بيتك.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:0575651053">☎ اتصل واحجز الآن</a>
+          <a class="btn btn-dark" href="https://wa.me/201057651053?text=مرحباً، أريد الاستفسار عن خدماتكم" target="_blank" rel="noopener">◉ واتساب</a>
+        </div>
+        <div class="mini-note"><span class="dot"></span> مواعيد مرنة • سرعة في الاستجابة • أسعار مناسبة</div>
+      </div>
+
+      <div class="flyer-wrap" aria-label="بطاقة تعريف بالخدمة">
+        <span class="spark one">✦</span>
+        <span class="spark two">✦</span>
+        <div class="flyer">
+          <div class="flyer-top"><span>خدمة متنقلة</span><span class="flyer-stamp">متاح الآن</span></div>
+          <div class="flyer-content">
+            <div class="tiny">YOUR HOME, OUR CARE</div>
+            <h2>نظافة.<br>أمان.<br><span style="color: var(--mint);">راحة.</span></h2>
+            <p>كل ما يحتاجه بيتك في مكان واحد، بجودة تلاحظها من أول زيارة.</p>
+          </div>
+          <div class="flyer-contact">
+            <div><div style="font-size:10px;color:rgba(255,255,255,.55);margin-bottom:3px;">للحجز والاستفسار</div><div class="flyer-number">0575651053</div></div>
+            <a class="flyer-phone" href="tel:0575651053" aria-label="اتصال مباشر">☎</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-shell section" id="services">
+      <div class="section-heading">
+        <div><p class="section-kicker">خدماتنا</p><h2 class="section-title">نرتب لك التفاصيل الكبيرة<br>بلمسة واحدة.</h2></div>
+        <p>اختر الخدمة المناسبة، واضغط على اتصال أو واتساب للحجز مباشرة. فريقنا جاهز لخدمتك.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon">✧</div>
+          <h3>خدمات النظافة</h3>
+          <p>تنظيف شامل للمنازل والمجالس والمكاتب مع عناية بكل ركن وتفصيلة.</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:0575651053">☎ اتصال</a>
+            <a class="btn btn-whatsapp" href="https://wa.me/201057651053?text=أرغب في حجز خدمة النظافة" target="_blank" rel="noopener">◉ واتساب</a>
+          </div>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">⌁</div>
+          <h3>العزل</h3>
+          <p>حلول عزل تساعد على حماية منزلك وتقليل التسربات والحرارة بكفاءة.</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:0575651053">☎ اتصال</a>
+            <a class="btn btn-whatsapp" href="https://wa.me/201057651053?text=أرغب في حجز خدمة العزل" target="_blank" rel="noopener">◉ واتساب</a>
+          </div>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">▣</div>
+          <h3>نقل الأثاث</h3>
+          <p>فك وتغليف ونقل وتركيب أثاثك بأمان واهتمام من المكان إلى المكان.</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:0575651053">☎ اتصال</a>
+            <a class="btn btn-whatsapp" href="https://wa.me/201057651053?text=أرغب في حجز خدمة نقل الأثاث" target="_blank" rel="noopener">◉ واتساب</a>
+          </div>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">◌</div>
+          <h3>مكافحة الحشرات</h3>
+          <p>مكافحة فعالة وآمنة للتخلص من الحشرات والحفاظ على راحة عائلتك.</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="tel:0575651053">☎ اتصال</a>
+            <a class="btn btn-whatsapp" href="https://wa.me/201057651053?text=أرغب في حجز خدمة مكافحة الحشرات" target="_blank" rel="noopener">◉ واتساب</a>
+          </div>
+        </article>
+      </div>
+      <div class="location-bar">
+        <div class="location-label"><span class="location-pin">⌖</span><span>المدينة والمناطق المجاورة</span></div>
+        <small>نصل إليك أينما كنت — تواصل معنا لتأكيد نطاق الخدمة</small>
+      </div>
+    </section>
+
+    <section class="page-shell section" id="about">
+      <div class="features">
+        <div class="features-copy">
+          <p class="section-kicker" style="color:var(--mint);">لماذا نحن؟</p>
+          <h2>شغل نظيف، تعامل راقٍ، ونتيجة تفرّق.</h2>
+          <p>نؤمن أن الخدمة الممتازة تبدأ من الالتزام بالمواعيد وتنتهي براحة حقيقية تشعر بها بعد انتهاء العمل.</p>
+        </div>
+        <div class="feature-list">
+          <div class="feature"><span class="feature-icon">✓</span><div><strong>فريق محترف</strong><span>خبرة واهتمام بالتفاصيل</span></div></div>
+          <div class="feature"><span class="feature-icon">◷</span><div><strong>استجابة سريعة</strong><span>ننسق الموعد بسهولة</span></div></div>
+          <div class="feature"><span class="feature-icon">♢</span><div><strong>أسعار مناسبة</strong><span>جودة تستحق ما تدفعه</span></div></div>
+          <div class="feature"><span class="feature-icon">♡</span><div><strong>راحة بالك</strong><span>خدمة باهتمام وأمان</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-shell section" id="reviews">
+      <div class="section-heading">
+        <div><p class="section-kicker">تقييمات العملاء</p><h2 class="section-title">كلام يفرحنا<br>ويطمّنك.</h2></div>
+      </div>
+      <div class="testimonial">
+        <div class="quote-mark">“</div>
+        <div><p>خدمة ممتازة وسريعة، والتعامل محترم جداً. النتيجة كانت أفضل مما توقعت.</p><small>عميل سعيد بالخدمة</small></div>
+        <div class="stars" aria-label="تقييم خمس نجوم">★★★★★</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="page-shell footer-inner">
+      <div>© <span id="year">2026</span> جميع الحقوق محفوظة لخدمات نقاء</div>
+      <div class="designer">تم التصميم بواسطة <a href="https://wa.me/201029095046?text=مرحباً م. نجوى، أريد الاستفسار عن التصميم" target="_blank" rel="noopener">م. نجوى إبراهيم</a></div>
+    </div>
+  </footer>
+
+  <div class="floating-actions" aria-label="وسائل التواصل السريعة">
+    <a class="float-btn float-call" href="tel:0575651053" aria-label="اتصال سريع"><span>اتصال مباشر</span>☎</a>
+    <a class="float-btn float-wa" href="https://wa.me/201057651053?text=مرحباً، أريد الاستفسار عن خدماتكم" target="_blank" rel="noopener" aria-label="واتساب سريع"><span>تحدث معنا على واتساب</span>◉</a>
+  </div>
+
+  <script>
+    (function () {
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+      const year = document.getElementById('year');
+      year.textContent = new Date().getFullYear();
+      menuToggle.addEventListener('click', function () {
+        const isOpen = navMenu.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      navMenu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          navMenu.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }());
+  </script>
+</body>
+</html>
